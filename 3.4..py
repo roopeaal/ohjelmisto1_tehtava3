@@ -1,12 +1,9 @@
-def on_karkausvuosi(vuosi):
-    if (vuosi % 4 == 0 and vuosi % 100 != 0) or (vuosi % 400 == 0):
-        return True
+vuosiluku = int(input("Anna vuosiluku: "))
+if vuosiluku % 4 == 0:
+    if vuosiluku % 100 != 0 or vuosiluku % 400 == 0:
+        print ("Tämä on karkausvuosi.")
     else:
-        return False
+        print("Tämä ei ole karkausvuosi.")
 
-vuosiluku = int(input("Syötä vuosiluku: "))
-
-if on_karkausvuosi(vuosiluku):
-    print(f"{vuosiluku} on karkausvuosi.")
 else:
-    print(f"{vuosiluku} ei ole karkausvuosi.")
+    print("Tämä ei ole karkausvuosi.")
