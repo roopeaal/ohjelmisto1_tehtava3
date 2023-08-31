@@ -1,3 +1,7 @@
+import math
+pienin = -math.inf
+suurin = math.inf
+
 while True:
     luku = input("Anna luku: ")
 
