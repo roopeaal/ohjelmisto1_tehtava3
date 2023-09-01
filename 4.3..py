@@ -7,5 +7,5 @@ while True:
 
     if luku == "":
         break
-print(f"Ohjelma lopetettu")
+print(f"Ohjelma lopetettu. Suurin luku:" + pienin)
 
