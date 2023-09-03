@@ -1,10 +1,26 @@
+# Alustetaan tyhjä lista lukuja varten
 luvut = []
-luku = int(input("Anna luku: "))
+
+# Kysytään käyttäjältä lukuja
 while True:
-    luvut.append(luku)
-    luku = int(input("Anna seuraava luku tai lopeta painamalla Enter "))
+    syote = input("Syötä luku (tyhjä rivi lopettaa): ")
 
-    if luku == "":
+    # Tarkistetaan, onko syöte tyhjä
+    if syote == "":
         break
-print(luvut)
 
+    # Yritetään muuttaa syöte kokonaisluvuksi, ja lisätään se listaan
+    try:
+        luku = int(syote)
+        luvut.append(luku)
+    except ValueError:
+        print("Virheellinen syöte. Syötä kokonaisluku.")
+
+# Tarkistetaan, onko lukuja annettu tarpeeksi
+if len(luvut) < 5:
+    print("Syötä vähintään viisi lukua.")
+else:
+    # Lajitellaan luvut suurimmasta pienimpään ja tulostetaan viisi suurinta
+    luvut.sort(reverse=True)
+    viisi_suurinta = luvut[:5]
+    print("Viisi suurinta lukua suurimmasta alkaen:", viisi_suurinta)
