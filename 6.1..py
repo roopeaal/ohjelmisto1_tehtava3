@@ -9,6 +9,6 @@ def noppa():
         print(luku)
 
     else:
-        print("Sait luvun kuusi, ohjelma päättyi")
+        print("Sait luvun kuusi, ohjelma päättyi.")
 
 noppa()
