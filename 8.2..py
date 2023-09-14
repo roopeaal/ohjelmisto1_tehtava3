@@ -11,11 +11,13 @@ yhteys = mysql.connector.connect(
 
 maakoodi = input("Kerro haettava maakoodi (esimerkiksi FI): ")
 
-sql = "SELECT code from airport where country = '" + maakoodi + "'"
+sql = "SELECT type, count(*) from airport"
+sql += " where iso_country ='" + maakoodi + "'group by type"
+
 
 
 kursori = yhteys.cursor()
 kursori.execute(sql)
 tulos = kursori.fetchall()
 for rivi in tulos:
-    print(f"{rivi[0]}")
+    print(f"{rivi[0]} on {rivi[1]} kappaletta.")
